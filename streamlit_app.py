@@ -16,6 +16,6 @@ sin caracteres que separen los numeros.
 NombreUsuario = st.text_input("Nombre del usuario")
 Fecha = st.date_input("Seleccione fecha de nacimiento sin caracteres que separen los numeros, formato aaaa/mm/dd:", datetime.date.today())
 
-st.window(Fecha)
-st.window(NombreUsuario)
+print(Fecha)
+print(NombreUsuario)
 
