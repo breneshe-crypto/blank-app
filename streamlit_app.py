@@ -18,7 +18,7 @@ Fecha = st.date_input("Seleccione fecha de nacimiento sin caracteres que separen
 
 
 
-st.rerun()
+#st.rerun()
 st.write("La fecha ingresada es: ", Fecha , "por el usuario:", NombreUsuario)
 st.write(NombreUsuario)
 
