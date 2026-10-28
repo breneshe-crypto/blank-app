@@ -1,4 +1,5 @@
 import streamlit as st
+import datetime
 
 st.title("First Streamlit App 👋")
 st.markdown(
@@ -13,5 +14,5 @@ sin caracteres que separen los numeros.
 )
 
 NombreUsuario = st.text_input("Nombre del usuario")
-Fecha = st.text_input("Fecha de nacimiento sin caracteres que separen los numeros, formato ddmmaaaa")
+Fecha = st.date_input("Fecha de nacimiento sin caracteres que separen los numeros, formato ddmmaaaa:", datetime.date.today())
 
