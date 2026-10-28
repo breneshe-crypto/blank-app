@@ -14,7 +14,7 @@ sin caracteres que separen los numeros.
 )
 
 NombreUsuario = st.text_input("Nombre del usuario")
-Fecha = st.date_input("Seleccione fecha de nacimiento sin caracteres que separen los numeros, formato aaaa/mm/dd:", datetime.date.today(),min_value=1900,max_value=2027)
+Fecha = st.date_input(label="Seleccione fecha de nacimiento sin caracteres que separen los numeros, formato aaaa/mm/dd:", value=datetime.date.today(), min_value=1900, max_value=2027)
 
 
 
