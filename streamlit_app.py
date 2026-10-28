@@ -16,6 +16,9 @@ sin caracteres que separen los numeros.
 NombreUsuario = st.text_input("Nombre del usuario")
 Fecha = st.date_input("Seleccione fecha de nacimiento sin caracteres que separen los numeros, formato aaaa/mm/dd:", datetime.date.today())
 
+
+
+st.rerun()
 st.write("La fecha ingresada es: ", Fecha , "por el usuario:", NombreUsuario)
 st.write(NombreUsuario)
 
