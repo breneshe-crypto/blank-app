@@ -16,7 +16,6 @@ sin caracteres que separen los numeros.
     """
 )
  
-
 FechaMinima = datetime.date(1900,1,1)
 FechaMaxima = datetime.date.today()
 
@@ -29,25 +28,30 @@ FechaSeleccionada = st.date_input(
     min_value=FechaMinima,       # Desbloquea los años hacia atrás
     max_value=FechaMaxima        # Desbloquea los años hacia adelante
 )
-if st.button("Calcular edad"):
-    with st.spinner("Calculando la edad..."):
-        time.sleep(5)  # Simula un tiempo de espera para el cálculo 
-    if FechaSeleccionada > FechaMaxima:
-        st.error("La fecha seleccionada debe ser anterior a la fecha de hoy.")
-    else:
-        diferencia = relativedelta(FechaMaxima, FechaSeleccionada)
-        anios = diferencia.years
-        st.subheader("**Resultado:**")
-        st.write(f"**Años completos:** {anios} años")
-        st.write(
-            f"Detalle exacto: {diferencia.years} años, {diferencia.months} meses y"
-            f" {diferencia.days} días."
-        )
-            
-        st.write("La fecha ingresada es: ", FechaSeleccionada , "por el usuario:", NombreUsuario)
-        edad = (FechaMaxima - FechaSeleccionada)
-        st.write("Fecha elegida:", FechaSeleccionada)
-        st.write("Edad (en dias): ", edad)
-        st.write("Edad (en semanas): ", diferencia.years * 52 + diferencia.months * 4 + diferencia.days // 7)
 
-
+try:
+    if st.button("Calcular edad"):
+        with st.spinner("Calculando la edad..."):
+            time.sleep(5)  # Simula un tiempo de espera para el cálculo 
+        if FechaSeleccionada > FechaMaxima:
+            raise st.error("La fecha seleccionada debe ser anterior a la fecha de hoy.")
+        else:
+            diferencia = relativedelta(FechaMaxima, FechaSeleccionada)
+            anios = diferencia.years
+            st.subheader("**Resultado:**")
+            st.write(f"**Años completos:** {anios} años")
+            st.write(
+                f"Detalle exacto: {diferencia.years} años, {diferencia.months} meses y"
+                f" {diferencia.days} días."
+            )
+                
+            st.write("La fecha ingresada es: ", FechaSeleccionada , "por el usuario:", NombreUsuario)
+            edad = (FechaMaxima - FechaSeleccionada)
+            st.write("Fecha elegida:", FechaSeleccionada)
+            st.write("Edad (en dias): ", edad)
+            st.write("Edad (en semanas): ", diferencia.years * 52 + diferencia.months * 4 + diferencia.days // 7)
+except ValueError:
+    st.error("Formato de fecha inválido. Por favor, ingrese la fecha en el formato correcto (aaaa/mm/dd).")
+except IndexError:
+    st.error("Formato en la fecha no valido.")
+                
