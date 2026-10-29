@@ -24,8 +24,11 @@ fecha_seleccionada = st.date_input(
     max_value=fecha_maxima        # Desbloquea los años hacia adelante
 )
 
+edad = datetime.date.today() - fecha_seleccionada
 
 st.write("La fecha ingresada es: ", fecha_seleccionada , "por el usuario:", NombreUsuario)
 st.write(NombreUsuario)
 
 st.write("Fecha elegida:", fecha_seleccionada)
+st.write("Edad:", edad)
+
