@@ -17,7 +17,7 @@ sin caracteres que separen los numeros.
 
 fecha_minima = datetime.date(1900, 1, 1)
 fecha_maxima = datetime.date.today()
-st.subheader("Resultado:" fecha_maxima)
+st.subheader("Resultado:", fecha_maxima)
 
 NombreUsuario = st.text_input("Nombre del usuario")
 fecha_seleccionada = st.date_input(
