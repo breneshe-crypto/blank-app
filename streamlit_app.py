@@ -13,11 +13,19 @@ sin caracteres que separen los numeros.
     """
 )
 
+fecha_minima = datetime.date(1920, 1, 1)
+fecha_maxima = datetime.date(2050, 12, 31)
+
 NombreUsuario = st.text_input("Nombre del usuario")
-Fecha = st.date_input(label = "Seleccione fecha de nacimiento sin caracteres que separen los numeros, formato aaaa/mm/dd:", value = datetime.date.today(), min_value = datetime.date(1900, 1, 1), max_value = datetime.date(2027, 12, 31))
+fecha_seleccionada = st.date_input(
+    label="Seleccione fecha de nacimiento sin caracteres que separen los numeros, formato aaaa/mm/dd:",
+    value=datetime.date.today(),  # Fecha inicial por defecto
+    min_value=fecha_minima,       # Desbloquea los años hacia atrás
+    max_value=fecha_maxima        # Desbloquea los años hacia adelante
+)
 
 
-
-st.write("La fecha ingresada es: ", Fecha , "por el usuario:", NombreUsuario)
+st.write("La fecha ingresada es: ", fecha_seleccionada , "por el usuario:", NombreUsuario)
 st.write(NombreUsuario)
 
+st.write("Fecha elegida:", fecha_seleccionada)
