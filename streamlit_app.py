@@ -28,7 +28,7 @@ if fecha_seleccionada > fecha_maxima:
   st.error("La fecha seleccionada debe ser anterior a la fecha de hoy.")
 else:
   diferencia = relativedelta(fecha_fin, fecha_inicio)
-  anios = diferencia.yearsr el desglose completo
+  anios = diferencia.yearsr
   st.subheader("Resultado:")
   st.write(f"**Años completos:** {anios} años")
   st.write(
