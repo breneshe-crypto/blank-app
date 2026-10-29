@@ -14,7 +14,8 @@ sin caracteres que separen los numeros.
 
     """
 )
-fecha_minima = datetime.date(1990, 1, 1)
+
+fecha_minima = datetime.date(1900, 1, 1)
 
 fecha_maxima = datetime.date.today()
 st.subheader("Resultado:", fecha_maxima)
