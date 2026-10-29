@@ -1,5 +1,5 @@
 import streamlit as st
-import datetime import date
+import datetime
 from dateutil.relativedelta import relativedelta
 
 st.title("First Streamlit App 👋")
