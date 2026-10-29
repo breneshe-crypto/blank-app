@@ -14,7 +14,7 @@ sin caracteres que separen los numeros.
 )
 
 fecha_minima = datetime.date(1900, 1, 1)
-fecha_maxima = datetime.date(2050, 12, 31)
+fecha_maxima = datetime.date.today()
 
 NombreUsuario = st.text_input("Nombre del usuario")
 fecha_seleccionada = st.date_input(
@@ -24,9 +24,17 @@ fecha_seleccionada = st.date_input(
     max_value=fecha_maxima        # Desbloquea los años hacia adelante
 )
 
-edad = datetime.date.today() - fecha_seleccionada
-anios = edad / 365
-
+if fecha_seleccionada > fecha_maxima:
+  st.error("La fecha seleccionada debe ser anterior a la fecha de hoy.")
+else:
+  diferencia = relativedelta(fecha_fin, fecha_inicio)
+  anios = diferencia.yearsr el desglose completo
+  st.subheader("Resultado:")
+  st.write(f"**Años completos:** {anios} años")
+  st.write(
+      f"Detalle exacto: {diferencia.years} años, {diferencia.months} meses y"
+      f" {diferencia.days} días."
+  )
 st.write("La fecha ingresada es: ", fecha_seleccionada , "por el usuario:", NombreUsuario)
 st.write(NombreUsuario)
 
