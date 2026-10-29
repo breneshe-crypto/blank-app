@@ -17,7 +17,7 @@ sin caracteres que separen los numeros.
  
 FechaMinima = datetime.date(1900,1,1)
 FechaMaxima = datetime.date.today()
-st.write("Fecha máxima:", FechaMaxima)
+st.write("Fecha Actual:", FechaMaxima)
 
 NombreUsuario = st.text_input("Nombre del usuario")
 FechaSeleccionada = st.date_input(
