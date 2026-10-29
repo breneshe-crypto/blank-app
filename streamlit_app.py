@@ -25,10 +25,12 @@ fecha_seleccionada = st.date_input(
 )
 
 edad = datetime.date.today() - fecha_seleccionada
+anios = edad / 365
 
 st.write("La fecha ingresada es: ", fecha_seleccionada , "por el usuario:", NombreUsuario)
 st.write(NombreUsuario)
 
 st.write("Fecha elegida:", fecha_seleccionada)
-st.write("Edad:", edad)
+st.write("Edad (en dias): ", edad)
+st.write("Edad (en años): ", anios)
 
