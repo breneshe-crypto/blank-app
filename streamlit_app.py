@@ -13,7 +13,7 @@ sin caracteres que separen los numeros.
     """
 )
 
-fecha_minima = datetime.date(1920, 1, 1)
+fecha_minima = datetime.date(1900, 1, 1)
 fecha_maxima = datetime.date(2050, 12, 31)
 
 NombreUsuario = st.text_input("Nombre del usuario")
