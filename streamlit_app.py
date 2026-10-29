@@ -1,6 +1,7 @@
 import streamlit as st
-import datetime
-from dateutil.relativedelta import relativedelta
+from datetime import *
+from dateutil.relativedelta import *
+
 
 st.title("First Streamlit App 👋")
 st.markdown(
